@@ -7,7 +7,9 @@ public class Ksiazka {
     public String getTytul() {
         return tytul;
     }
-
+    public boolean czyDostepna() {
+        return this.dostepna;
+    }
     public Ksiazka(String tytul, String autor, int liczbaStron, boolean dostepna) {
 this.tytul=tytul;
 this.autor=autor;

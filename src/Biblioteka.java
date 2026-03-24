@@ -3,13 +3,13 @@ class Biblioteka {
     private int liczbaKsiazek;
 
     public Biblioteka(int pojemnosc) {
-        ksiazki = new Ksiazka[pojemnosc];
-        liczbaKsiazek = 0;
+        this.ksiazki = new Ksiazka[pojemnosc];
+        this.liczbaKsiazek = 0;
     }
 
-    public void dodajKsiazke(Ksiazka ksiazka) {
-        if (liczbaKsiazek < ksiazki.length) {
-            ksiazki[liczbaKsiazek] = ksiazka;
+    public void dodajKsiazke(Ksiazka nowaKsiazka) {
+        if (this.liczbaKsiazek < this.ksiazki.length) {
+            this.ksiazki[this.liczbaKsiazek] = nowaKsiazka;
             liczbaKsiazek++;
         } else {
             System.out.println("Brak miejsca w bibliotece");
@@ -17,23 +17,28 @@ class Biblioteka {
     }
 
     public void wypiszDostepneKsiazki() {
-        for (int i = 0; i < liczbaKsiazek; i++) {
-            System.out.println(ksiazki[i]);
+        for (int i = 0; i < this.liczbaKsiazek; i++) {
+            this.ksiazki[i].printInfo();
         }
     }
 
 
     public Ksiazka znajdzKsiazkePoTytule(String tytul) {
-
-        for (int i = 0; i < liczbaKsiazek; i++) {
-            if (ksiazki[i].getTytul().equals(tytul)) {
-                return ksiazki[i];
+        for (int i = 0; i < this.liczbaKsiazek; i++) {
+            if (this.ksiazki[i].getTytul().equals(tytul)) {
+                return this.ksiazki[i];
             }
         }
         return null;
     }
 
     public int policzDostepneKsiazki() {
-        return liczbaKsiazek;
+        int licznik = 0;
+        for (int i = 0; i < this.liczbaKsiazek; i++) {
+            if (this.ksiazki[i].czyDostepna()) {
+                licznik++;
+            }
+        }
+        return this.liczbaKsiazek;
     }
 }
