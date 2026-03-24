@@ -12,11 +12,11 @@ public class Czytelnik {
     }
 
 
-    public void printInfo() {
-        System.out.println("Tytul: " + this.imie);
-        System.out.println("Autor: " + this.nazwisko);
-        System.out.println("Liczba Stron: " + this.numerKarty);
-        System.out.println("Dostępna: " + this.liczbaWyporzyczen);
+    public void printData() {
+        System.out.println("Imię: " + this.imie);
+        System.out.println("Nazwisko: " + this.nazwisko);
+        System.out.println("Numer karty: " + this.numerKarty);
+        System.out.println("Liczba Wyporzyczeń: " + this.liczbaWyporzyczen);
 
     }
 
